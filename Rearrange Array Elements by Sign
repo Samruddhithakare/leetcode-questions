@@ -1,0 +1,28 @@
+https://leetcode.com/problems/rearrange-array-elements-by-sign/description/
+
+sol:
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+         vector<int> ans;
+         queue<int> p;
+         queue<int> n;
+         for(int i=0;i<nums.size();i++){
+            if(nums[i]>0) p.push(nums[i]);
+            else n.push(nums[i]);
+         }
+
+         while(!p.empty()){
+            int p1=p.front();
+            int n1=n.front();
+            p.pop();
+            n.pop();
+            ans.push_back(p1);
+            ans.push_back(n1);
+         }
+         return ans;
+        
+
+    }
+};
+
