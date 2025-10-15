@@ -1,0 +1,30 @@
+class Solution {
+public:
+    bool hasIncreasingSubarrays(vector<int>& nums, int k1) {
+         int pre=0;
+        int curr=1;
+        int k=1;
+        for(int i=1;i<nums.size();i++){
+             if(nums[i]>nums[i-1]){
+                curr++;
+             }
+             else{
+               
+                int a=curr/2;
+                k=max(k,a);
+                 
+                int b=min(pre,curr);
+                k=max(k,b);
+               pre=curr;
+                curr=1;
+             }
+        }
+        int a=curr/2;
+        k=max(k,a);
+        int b=min(pre,curr);
+        k=max(k,b);
+        if(k>=k1) return true;
+        return false;
+         
+    }
+};
