@@ -1,3 +1,5 @@
+https://leetcode.com/problems/adjacent-increasing-subarrays-detection-i/description/
+
 class Solution {
 public:
     bool hasIncreasingSubarrays(vector<int>& nums, int k1) {
